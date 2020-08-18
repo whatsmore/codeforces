@@ -1,3 +1,6 @@
+#git
+.gitignore
+
 #idea
 .idea
 
@@ -14,6 +17,7 @@
 .mtj.tmp/
 
 # Package Files #
+target
 *.jar
 *.war
 *.nar
