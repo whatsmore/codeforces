@@ -25,26 +25,26 @@ public class Main {
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
         int testCount = scr.nextInt();
-        for(int i = 0;i<testCount;i++){
-            System.out.println(gameOnLeaves()?"Ayush":"Ashish");
+        for (int i = 0; i < testCount; i++) {
+            System.out.println(gameOnLeaves(scr) ? "Ayush" : "Ashish");
         }
     }
-    static boolean gameOnLeaves(){
-        Scanner scr = new Scanner(System.in);
+
+    static boolean gameOnLeaves(Scanner scr) {
         int pointCount = scr.nextInt();
         int specialNums = scr.nextInt();
         int notSpecialEdges = 0;
         int specialEdges = 0;
-        for(int i = 1;i<=pointCount-1;i++){
+        for (int i = 1; i <= pointCount - 1; i++) {
             int from = scr.nextInt();
             int to = scr.nextInt();
-            if(from!=specialNums&&to!=specialNums){
+            if (from != specialNums && to != specialNums) {
                 notSpecialEdges++;
-            }else{
+            } else {
                 specialEdges++;
             }
         }
-        return specialEdges==1||!(notSpecialEdges%2==0);
+        return specialEdges <= 1 || !((notSpecialEdges + specialEdges) % 2 == 0);
     }
     /*code forces 1395/B Boboniu Plays Chess
         在一个n*m的地图内，给出开始坐标，用车的走法走遍全地图。
